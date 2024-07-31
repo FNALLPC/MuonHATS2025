@@ -30,6 +30,14 @@ cd MuonHATS
 
 The repository will appear in the folder structure in the sidebar. It contains four notebooks that can be access simply via this file browser. When starting each of the notebooks, select the `HATS 2024` kernel, which has all required packages installed. When running somewhere else, the included `environment.yml` can be used to create a compatible conda environment. 
 
+## Introduction: General information on muons in CMS
+
+Muons in CMS are maintained and supported by the Muon POG ([Twiki](https://twiki.cern.ch/twiki/bin/viewauth/CMS/MuonPOG)). This group is responsible for the triggering, reconstruction, and identification of muons from the detector signals. The muon detectors, their maintainance and calibration, are the responsibility of the detector projects and Muon DPG. Muons in the L1 trigger are responsibility of the L1 DPG. 
+
+For analysts, the best entry point when looking for information about muons in CMS is currently this [Twiki page](https://twiki.cern.ch/twiki/bin/view/CMS/TWikiPAGsMUO), which contains links to the relevant recommendations. The muon contact of your PAG is your first point of contact for questions about muons, the names are listed on this page as well. Further questions, especially of technical nature, can be asked on [CMS Talk](https://cms-talk.web.cern.ch/c/physics/muo/147). In urgent cases or to request presentations in the one of the POG meetings, contact the POG conveners at `cms-phys-conveners-MUO@cern.ch`. 
+
+Information about muon selections can be found on this [Twiki page](https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2) (still to be migrated to a Run 3 version). Efficiencies for standard use cases are provided by the POG, but if custom selections are used, analysts need to derive them themselves, for example using the Tag & Probe tools described [here](https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideMuonTnPOverview). 
+
 ## Exercise 1: Introduction, muon object, main variables
 
 In this exercise we will get familiar with the muon objects in a nanoAOD file. We will mostly a NANOAODSIM file, containing simulated Drell–Yan dimuon events generated at NLO with the program MadGraph.
