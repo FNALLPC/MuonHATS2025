@@ -1,0 +1,15 @@
+name: muon-hats-2024
+channels:
+    - conda-forge
+    - defaults
+dependencies:
+    - uproot
+    - matplotlib
+    - pandas
+    - ipykernel
+    - tqdm
+    - jupyter
+    - root
+    - scipy
+    - coffea
+    - boost
