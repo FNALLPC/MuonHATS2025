@@ -81,33 +81,33 @@ To better understand the selection criteria, it is useful to classify each muon 
 
 In order to isolate each source of muons, we put cut on various variables. Below are variables commonly used for those cuts; please note that the presented way to access them is used in miniAOD.
 
-    whether the muon is a global muon, i.e. it was reconstructed with a combined fit of tracker and muon chambers measurements
+- whether the muon is a global muon, i.e. it was reconstructed with a combined fit of tracker and muon chambers measurements
         `muon->isGlobalMuon()` 
-    whether the muon is a tracker muon, i.e. it was identified by geometrically matching an inner track with segments in the muon chambers
+- whether the muon is a tracker muon, i.e. it was identified by geometrically matching an inner track with segments in the muon chambers
         `muon->isTrackerMuon()`
-    Normalized χ2 of the global track fit
+- Normalized χ2 of the global track fit
         `if(muon->isGlobalMuon()) muon->globalTrack()->normalizedChi2()`
-    Number of muon chamber hits included in the global-muon track fit
+- Number of muon chamber hits included in the global-muon track fit
         `if(muon->isGlobalMuon()) muon->globalTrack()->hitPattern().numberOfValidMuonHits()`
-    Number of muon stations with matched segments
+- Number of muon stations with matched segments
         `muon->numberOfMatchedStations()`
-    Number of hits in the pixel detector
+- Number of hits in the pixel detector
         `muon->innerTrack()->hitPattern().numberOfValidPixelHits()`
-    Number of hits in the tracker layers
+- Number of hits in the tracker layers
         `muon->innerTrack()->hitPattern().trackerLayersWithMeasurement()`
-    Transverse impact parameter of the track with respect to the vertex from which the muon originated
+- Transverse impact parameter of the track with respect to the vertex from which the muon originated
         `muon->muonBestTrack()->dxy(firstGoodVertex->position())`
-    Isolation based on the sum of pT of charged-hadron PFCandidates from the leading primary vertex in the event, in a cone of ΔR < 0.4 around the muon
+- Isolation based on the sum of pT of charged-hadron PFCandidates from the leading primary vertex in the event, in a cone of ΔR < 0.4 around the muon
         `muon->pfIsolationR04().sumChargedHadronPt`
-    Isolation calculated with neutral-hadron PFCandidates in a cone of ΔR < 0.4 around the muon
+- Isolation calculated with neutral-hadron PFCandidates in a cone of ΔR < 0.4 around the muon
         `muon->pfIsolationR04().sumNeutralHadronEt`
-    Isolation calculated with photon PFCandidates in a cone of ΔR < 0.4 around the muon
+- Isolation calculated with photon PFCandidates in a cone of ΔR < 0.4 around the muon
         `muon->pfIsolationR04().sumPhotonEt`
-    Isolation calculated with all charged particles in a cone of ΔR < 0.4 around the muon, but not from the leading primary vertex (i.e. pileup contribution to the isolation sum)
+- Isolation calculated with all charged particles in a cone of ΔR < 0.4 around the muon, but not from the leading primary vertex (i.e. pileup contribution to the isolation sum)
         `muon->pfIsolationR04().sumPUPt`
-    PF-based combined relative isolation, Δβ-corrected for pileup
+- PF-based combined relative isolation, Δβ-corrected for pileup
         `(muon->pfIsolationR04().sumChargedHadronPt + max(0., mu->pfIsolationR04().sumNeutralHadronEt + mu->pfIsolationR04().sumPhotonEt - 0.5*mu->pfIsolationR04().sumPUPt)) / muon->pt()`
-    Tracker-based relative isolation
+- Tracker-based relative isolation
         `muon->isolationR03().sumPt / muon->pt()`
 
 In the nanoAOD , the following variables can be found:
@@ -226,10 +226,7 @@ double combRelIso = (pfR04.sumChargedHadronPt + pfR04.sumNeutralHadronEt + pfR04
 ```
 
 The combined isolation turns out to perform better than the individual components separately in terms of efficiency vs background rejection.
-Note that for neutral particles (photons and neutral hadrons) it is impossible to determine the vertex they originated from, since they don't have a track. Therefore neutral particles from pileup vertices contribute to the pT sum, and the performance of the combined isolation results to be strongly dependent on the pileup level. Corrections are available to mitigate such effect. The most common in CMS is called "Δβ correction": it estimates the ΣpT of neutral particles coming from pileup vertices using
-
-    the ΣpT of charged particles from pileup vertices (mu->pfIsolationR04().sumPUPt), and
-    the ratio of neutral-to-charged particles expected in LHC proton-proton collisions. From simulation studies, this ratio results to be about 0.5. 
+Note that for neutral particles (photons and neutral hadrons) it is impossible to determine the vertex they originated from, since they don't have a track. Therefore neutral particles from pileup vertices contribute to the pT sum, and the performance of the combined isolation results to be strongly dependent on the pileup level. Corrections are available to mitigate such effect. The most common in CMS is called "Δβ correction": it estimates the ΣpT of neutral particles coming from pileup vertices using the ΣpT of charged particles from pileup vertices (mu->pfIsolationR04().sumPUPt), and the ratio of neutral-to-charged particles expected in LHC proton-proton collisions. From simulation studies, this ratio results to be about 0.5. 
 
 We can now define a Δβ-corrected combined relative isolation, less sensitive to the number of pileup vertices:
 
