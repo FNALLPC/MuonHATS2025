@@ -21,7 +21,22 @@ This exercise is designed for, and tested at, the [Purdue Analysis Facility](htt
 
 However, the input files used in the exercises are specific to the Purdue AF and will need to be replaced when running somewhere else. 
 
-The Purdue AF is available for anyone with a valid CERN account. To log in, go to [https://cms.geddes.rcac.purdue.edu/hub](https://cms.geddes.rcac.purdue.edu/hub) and select the CERN SSO to log in. Then start an instance with the default settings for CPU and memory, those will be sufficient. After your instance has been created, open a terminal to download this repository using
+Before the live session, please make sure that you can access Purdue Analysis Facility using the instructions below. 
+
+1. Navigate to the [Purdue AF website](https://analysis-facility.physics.purdue.edu/) and click “Login to Purdue Analysis Facility”.
+2. On the CILogon page, choose CERN account to log in (using Fermilab or Purdue credentials is also possible).
+3. You will be redirected to the “Server Options” page. The default resource selection (4 CPUs, 16 GB RAM) is enough for the HATS exercises, but you can select more resources if needed. **Do not add GPUs to your session – there are not enough GPUs for all participants.**
+4. Click “Start” to create your Analysis Facility session. It may take a couple of minutes to load.
+5. Done! Your session is ready.
+
+<details>
+  <summary>Additional details</summary>
+  
+- As a CMS member, you can continue using Purdue AF for your work after HATS is over.
+- Your Purdue AF session will keep running even if you close your web browser tab, so you can reconnect to it at any time. Idle sessions are terminated after 14 days.
+- When you log in for the first time, we create a 25 GB private directory for you at `/home/<username>`, and a shared `/work/users/<username>` directory with 100 GB quota. These directories will persist for 6 months after your last activity at Purdue AF.
+- Browse the [documentation](https://analysis-facility.physics.purdue.edu/) to learn more about available functionality.
+
 
 ```
 git clone https://github.com/JanFSchulte/MuonHATS.git
