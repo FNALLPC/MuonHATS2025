@@ -1,7 +1,6 @@
-name: muon-hats-2024
+name: muon-hats-2025
 channels:
     - conda-forge
-    - defaults
 dependencies:
     - uproot
     - matplotlib

@@ -6,7 +6,7 @@
 
 ## Technical setup
 
-This exercise is designed for, and tested at, the [Purdue Analysis Facility](https://analysis-facility.physics.purdue.edu/en/latest/) (AF). In general, it is expected to run where the following requirements are fulfilled:
+This exercise is designed for, and tested at, the [FNAL Elastic Analysis Facility](https://uscms.org/uscms_at_work/computing/setup/gpu.shtml) (AF). In general, it is expected to run where the following requirements are fulfilled:
 
 * python3
 * uproot
@@ -19,31 +19,40 @@ This exercise is designed for, and tested at, the [Purdue Analysis Facility](htt
 * coffea 
 * boost
 
-However, the input files used in the exercises are specific to the Purdue AF and will need to be replaced when running somewhere else. 
+Before the live session, please make sure that you can access Elastic Analysis Facility using the instructions below. 
 
-Before the live session, please make sure that you can access Purdue Analysis Facility using the instructions below. 
-
-1. Navigate to the [Purdue AF website](https://analysis-facility.physics.purdue.edu/) and click “Login to Purdue Analysis Facility”.
-2. On the CILogon page, choose CERN account to log in (using Fermilab or Purdue credentials is also possible).
-3. You will be redirected to the “Server Options” page. The default resource selection (4 CPUs, 16 GB RAM) is enough for the HATS exercises, but you can select more resources if needed. **Do not add GPUs to your session – there are not enough GPUs for all participants.**
-4. Click “Start” to create your Analysis Facility session. It may take a couple of minutes to load.
+1. Navigate to the [EAF documentation page](https://eafdocs.fnal.gov/master/index.html)
+2. Scroll down to the quickstart instructions and follow the link to start a jupyter-hub instance.
+3. From the menu of available images, check "CPU Interactives" in the CMS box (should be listed first).
+4. Scroll all the way to the bottom of the page and click “Start” to create your session. It may take a couple of minutes to load.
 5. Done! Your session is ready.
 
 <details>
   <summary>Additional details</summary>
   
-- As a CMS member, you can continue using Purdue AF for your work after HATS is over.
-- Your Purdue AF session will keep running even if you close your web browser tab, so you can reconnect to it at any time. Idle sessions are terminated after 14 days.
-- When you log in for the first time, we create a 25 GB private directory for you at `/home/<username>`, and a shared `/work/users/<username>` directory with 100 GB quota. These directories will persist for 6 months after your last activity at Purdue AF.
-- Browse the [documentation](https://analysis-facility.physics.purdue.edu/) to learn more about available functionality.
+- As a CMS member, you can continue using EAF for your work after HATS is over, provided you are onsite at FNAL, set up the FNAL VPN or use a web browser proxy.
+- Browse the [documentation](https://uscms.org/uscms_at_work/computing/setup/gpu.shtml) to learn more about how to access the EAF if you are working offsite.
 
 
 ```
-git clone https://github.com/JanFSchulte/MuonHATS.git
-cd MuonHATS
+git clone git@github.com:FNALLPC/MuonHATS2025.git
+cd MuonHATS2025
+
+conda init
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda env create -f environment.yml
 ```
 
-The repository will appear in the folder structure in the sidebar. It contains four notebooks that can be access simply via this file browser. When starting each of the notebooks, select the `HATS 2024` kernel, which has all required packages installed. When running somewhere else, the included `environment.yml` can be used to create a compatible conda environment. 
+After running these commands, add the following lines to your `~/.bash_profile` then open a fresh terminal.
+
+```
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+```
+
+The repository should appear in the folder structure in the sidebar. It contains four notebooks that can be access simply via this file browser. When starting each of the notebooks, select the `muon-hats-2025`.
 
 ## Introduction: General information on muons in CMS
 
