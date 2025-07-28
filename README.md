@@ -8,7 +8,7 @@ Thanks to Jan-Frederik Schulte for creating and maintaining these materials for 
 
 ## Technical setup
 
-This exercise is designed for, and tested at, the [FNAL Elastic Analysis Facility](https://uscms.org/uscms_at_work/computing/setup/gpu.shtml) (AF). In general, it is expected to run where the following requirements are fulfilled:
+This exercise is designed for, and tested at, the [FNAL Elastic Analysis Facility](https://uscms.org/uscms_at_work/computing/setup/gpu.shtml) (EAF). In general, it is expected to run where the following requirements are fulfilled:
 
 * python3
 * uproot
