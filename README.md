@@ -2,7 +2,9 @@
 
 ## Facilitators
 
-- Jan-Frederik Schulte (jschulte@cern.ch)
+- Chris Cosby (ccosby@fnal.gov)
+
+Thanks to Jan-Frederik Schulte for creating and maintaining these materials for previous HATs.
 
 ## Technical setup
 
