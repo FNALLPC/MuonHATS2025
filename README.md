@@ -26,8 +26,9 @@ Before the live session, please make sure that you can access Elastic Analysis F
 1. Navigate to the [EAF documentation page](https://eafdocs.fnal.gov/master/index.html)
 2. Scroll down to the quickstart instructions and follow the link to start a jupyter-hub instance.
 3. From the menu of available images, check "CPU Interactives" in the CMS box (should be listed first).
-4. Scroll all the way to the bottom of the page and click “Start” to create your session. It may take a couple of minutes to load.
-5. Done! Your session is ready.
+4. Select the AL9 Dask (coffea v.7.x) image from the from the drop down list.
+5. Scroll all the way to the bottom of the page and click “Start” to create your session. It may take a couple of minutes to load.
+6. Done! Your session is ready.
 
 <details>
   <summary>Additional details</summary>
